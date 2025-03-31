@@ -1,61 +1,99 @@
-# vscode extension boilerplate
+# AI Reference Concatenator
 
 <div align="center">
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/YuTengjing.awesome-vscode-extension-boilerplate)](https://marketplace.visualstudio.com/items/YuTengjing.awesome-vscode-extension-boilerplate/changelog) [![Installs](https://img.shields.io/visual-studio-marketplace/i/YuTengjing.awesome-vscode-extension-boilerplate)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.awesome-vscode-extension-boilerplate) [![Downloads](https://img.shields.io/visual-studio-marketplace/d/YuTengjing.awesome-vscode-extension-boilerplate)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.awesome-vscode-extension-boilerplate) [![Rating Star](https://img.shields.io/visual-studio-marketplace/stars/YuTengjing.awesome-vscode-extension-boilerplate)](https://marketplace.visualstudio.com/items?itemName=YuTengjing.awesome-vscode-extension-boilerplate&ssr=false#review-details) [![Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/YuTengjing.awesome-vscode-extension-boilerplate)](https://github.com/tjx666/awesome-vscode-extension-boilerplate)
+<!-- TODO: Replace these badges with actual links once published -->
+<!-- [![Version](https://img.shields.io/visual-studio-marketplace/v/longle.ai-reference-concatenator)](https://marketplace.visualstudio.com/items/longle.ai-reference-concatenator/changelog) -->
+<!-- [![Installs](https://img.shields.io/visual-studio-marketplace/i/longle.ai-reference-concatenator)](https://marketplace.visualstudio.com/items?itemName=longle.ai-reference-concatenator) -->
+<!-- [![Downloads](https://img.shields.io/visual-studio-marketplace/d/longle.ai-reference-concatenator)](https://marketplace.visualstudio.com/items?itemName=longle.ai-reference-concatenator) -->
+<!-- [![Rating Star](https://img.shields.io/visual-studio-marketplace/stars/longle.ai-reference-concatenator)](https://marketplace.visualstudio.com/items?itemName=longle.ai-reference-concatenator&ssr=false#review-details) -->
 
-![CI](https://github.com/tjx666/awesome-vscode-extension-boilerplate/actions/workflows/ci.yml/badge.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![Github Open Issues](https://img.shields.io/github/issues/tjx666/awesome-vscode-extension-boilerplate)](https://github.com/tjx666/awesome-vscode-extension-boilerplate/issues) [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=flat-square)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://github.com/longle255/ai-reference-concatenator/pulls)
+[![Github Open Issues](https://img.shields.io/github/issues/longle255/ai-reference-concatenator)](https://github.com/longle255/ai-reference-concatenator/issues)
+[![License](https://img.shields.io/github/license/longle255/ai-reference-concatenator)](./LICENSE)
 
 </div>
 
+AI Reference Concatenator is a Visual Studio Code extension designed to transform your project files into a single, AI-ready reference document. By merging selected files and folders into one comprehensive output file—with clear, relative path headers—it becomes a powerful resource for providing context to AI systems for code analysis, documentation generation, and other advanced tasks.
+
 ## Features
 
-- github actions support publish extension to both vs marketplace and open vsx
-- auto generate changelog and publish github release, make sure you enabled the write permission of github actions
-- pnpm/eslint/prettier/ling-staged/simple-git-hooks/stale-dep
-- use esbuild to bundle extension
+- **Merge Multiple Files:** Select and combine multiple files from the explorer into one output document.
+- **Recursive Folder Concatenation:** Select one or more folders; the extension will recursively merge all contained files.
+- **Mixed Selection Support:** Works with a combination of files and folders.
+- **Relative Path Headers:** Each file's content is prefixed with a header showing its path relative to the workspace root.
+- **Custom Output File Name:** Provides an option to specify the name of the output file (default is `concatenated.txt`).
+- **Context Menu Integration:** Easily access the command via the explorer context menu:
+  - Visible when selecting multiple files, one or more folders, or mixed selection.
+  - Hidden when only a single file is selected.
+- **Automatic Output Opening:** Automatically opens the generated concatenated file after processing.
+- **Optimized for AI:** The structured output file is ideal for supplying to AI systems as reference material, ensuring context is maintained for tasks like code analysis or generating accurate documentation.
 
-## Setup
+## Usage
 
-After fork this repository and clone it to local, run:
+1. **Select Files/Folders:** In the VS Code Explorer, select the files and/or folders you want to concatenate.
+2. **Right-Click:** Right-click on one of the selected items.
+3. **Choose Command:** Select "Concat Selected Files" from the context menu.
+4. **Enter Output Name:** An input box will appear. Enter the desired name for the output file (e.g., `bundle.js`, `combined_log.txt`) and press Enter.
+5. **Review:** The extension creates the output file in your workspace root, complete with relative path headers for each file, and opens it for your review.
 
-```bash
-cd <your-extension-directory>
-npx setup-boilerplate
-```
+![Demo GIF (Placeholder - replace with actual demo)](https://via.placeholder.com/600x300.png?text=AI+Reference+Concatenator+Demo)
+_(Replace the above placeholder with a GIF showing the extension in action)_
 
-You can also just skip this step and adjust the boilerplate by yourself.
+## Installation
+
+### From Marketplace (Coming Soon!)
+
+Once published, install the extension directly from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+
+1. Open VS Code.
+2. Go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X).
+3. Search for `AI Reference Concatenator` or `longle.ai-reference-concatenator`.
+4. Click "Install".
+
+### From Source (for Development/Testing)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/longle255/ai-reference-concatenator.git
+   ```
+2. Navigate into the directory:
+   ```bash
+   cd ai-reference-concatenator
+   ```
+3. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+4. Open the project in VS Code:
+   ```bash
+   code .
+   ```
+5. Press `F5` to launch a new Extension Development Host window with the extension loaded.
 
 ## Development
 
-Install dependencies by:
+Follow the steps mentioned in the [From Source](#from-source-for-developmenttesting) section above.
 
-```shell
-pnpm install
-```
+- **Build:** Use `pnpm run compile` or `pnpm run watch` for incremental builds.
+- **Lint:** Run `pnpm run lint`
+- **Run Tests:** Execute `pnpm run test` (tests might need to be set up).
+- **Package:** Use `pnpm vsce package` (ensure `vsce` is installed globally via `npm install -g @vscode/vsce`)
 
-Then run and debug extension like in [official documentation](https://code.visualstudio.com/api/get-started/your-first-extension)
+## Contributing
 
-## Publish
+Contributions, issues, and feature requests are welcome! Please check the [issues page](https://github.com/longle255/ai-reference-concatenator/issues) before submitting a new issue.
 
-You need set two github actions secrets:
+When contributing, please adhere to the existing coding style and run the linting script (`pnpm run lint`) before submitting a pull request.
 
-- VS_MARKETPLACE_TOKEN: [Visual Studio Marketplace token](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)
-- OPEN_VSX_TOKEN: [Open VSX Registry token](https://github.com/eclipse/openvsx/wiki/Publishing-Extensions#3-create-an-access-token)
+## License
 
-```shell
-pnpm release
-```
+Distributed under the license specified in the [LICENSE](./LICENSE) file.
 
-## My extensions
+---
 
-- [Open in External App](https://github.com/tjx666/open-in-external-app)
-- [VSCode archive](https://github.com/tjx666/vscode-archive)
-- [Neo File Utils](https://github.com/tjx666/vscode-neo-file-utils)
-- [VSCode FE Helper](https://github.com/tjx666/vscode-fe-helper)
-- [Modify File Warning](https://github.com/tjx666/modify-file-warning)
-- [Power Edit](https://github.com/tjx666/power-edit)
-- [Adobe Extension Development Tools](https://github.com/tjx666/vscode-adobe-extension-devtools)
-- [Scripting Listener](https://github.com/tjx666/scripting-listener)
+Developed by [Long Le](https://github.com/longle255).
 
-Check all here: [publishers/YuTengjing](https://marketplace.visualstudio.com/publishers/YuTengjing)
+## Credits
+
+[VSCode Extension ](https://github.com/tjx666/awesome-vscode-extension-boilerplate)

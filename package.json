@@ -1,29 +1,34 @@
 {
-    "name": "awesome-vscode-extension-boilerplate",
-    "displayName": "Awesome VSCode Extension Boilerplate",
-    "version": "0.0.29",
-    "description": "An awesome vscode extension boilerplate",
-    "publisher": "YuTengjing",
+    "name": "ai-reference-concatenator",
+    "displayName": "AI Reference Concatenator",
+    "version": "1.0.0",
+    "description": "Transforms your project files into an AI-ready reference document.",
+    "publisher": "longle",
     "private": true,
     "preview": true,
     "author": {
-        "name": "YuTengjing",
-        "email": "ytj2713151713@gmail.com",
-        "url": "https://github.com/tjx666"
+        "name": "Long Le",
+        "email": "longlh255@gmail.com",
+        "url": "https://github.com/longle255"
     },
     "license": "SEE LICENSE IN LICENSE",
-    "homepage": "https://github.com/tjx666/awesome-vscode-extension-boilerplate/blob/master/README.md",
+    "homepage": "https://github.com/longle255/ai-reference-concatenator/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/tjx666/awesome-vscode-extension-boilerplate"
+        "url": "https://github.com/longle255/ai-reference-concatenator"
     },
     "bugs": {
-        "url": "https://github.com/tjx666/awesome-vscode-extension-boilerplate/issues",
-        "email": "ytj2713151713@gmail.com"
+        "url": "https://github.com/longle255/ai-reference-concatenator/issues",
+        "email": "longlh255@gmail.com"
     },
     "keywords": [
-        "boilerplate",
-        "template"
+        "ai",
+        "reference",
+        "concatenator",
+        "concat",
+        "files",
+        "merge",
+        "gpt"
     ],
     "categories": [
         "Other"
@@ -38,17 +43,26 @@
         {
             "url": "https://img.shields.io/badge/PRs-welcome-brightgreen.svg",
             "description": "PRs Welcome",
-            "href": "https://github.com/tjx666/awesome-vscode-extension-boilerplate/fork"
+            "href": "https://github.com/longle255/ai-reference-concatenator/fork"
         }
     ],
     "activationEvents": [],
     "contributes": {
         "commands": [
             {
-                "command": "awesome-vscode-extension-boilerplate.helloWorld",
-                "title": "Hello World"
+                "command": "ai-reference-concatenator.concatSelectedFiles",
+                "title": "Concat Selected Files"
             }
-        ]
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "listMultiSelection || explorerResourceIsFolder || explorerItemCount > 1",
+                    "command": "ai-reference-concatenator.concatSelectedFiles",
+                    "group": "7_modification"
+                }
+            ]
+        }
     },
     "eslintConfig": {
         "extends": "@yutengjing/eslint-config-typescript",
