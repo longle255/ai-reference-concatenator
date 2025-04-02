@@ -52,6 +52,10 @@
             {
                 "command": "ai-reference-concatenator.concatSelectedFiles",
                 "title": "Concat Selected Files"
+            },
+            {
+                "command": "ai-reference-concatenator.generateProjectStructure",
+                "title": "Generate Project Structure"
             }
         ],
         "menus": {
@@ -59,6 +63,11 @@
                 {
                     "when": "listMultiSelection || explorerResourceIsFolder || explorerItemCount > 1",
                     "command": "ai-reference-concatenator.concatSelectedFiles",
+                    "group": "7_modification"
+                },
+                {
+                    "when": "listMultiSelection || explorerResourceIsFolder",
+                    "command": "ai-reference-concatenator.generateProjectStructure",
                     "group": "7_modification"
                 }
             ]
@@ -120,5 +129,8 @@
         "stale-dep": "^0.7.0",
         "tsx": "^4.19.0",
         "typescript": "~5.5.4"
+    },
+    "dependencies": {
+        "ignore": "^7.0.3"
     }
 }

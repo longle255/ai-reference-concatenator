@@ -1,0 +1,60 @@
+
+/* ---- File: .airefignore ---- */
+
+test3
+node_modules/
+.git/
+
+
+/* ---- File: concatenated.txt ---- */
+
+
+/* ---- File: project-structure.md ---- */
+
+├── node_modules/
+
+├── test3/
+  ├── 2
+  ├── 3
+
+├── .airefignore
+
+├── concatenated.txt
+
+├── index.ts
+
+├── package.json
+
+├── project-structure.md
+
+
+
+
+
+/* ---- File: index.ts ---- */
+
+console.log('test workspace!');
+
+
+
+/* ---- File: package.json ---- */
+
+{
+    "name": "test-workspace"
+}
+
+
+
+/* ---- File: project-structure.md ---- */
+
+test-workspace/
+  ├── .airefignore
+  ├── .git/
+  ├── concatenated.txt
+  ├── index.ts
+  ├── node_modules/
+  ├── package.json
+  ├── project-structure.md
+  ├── test1/
+
+

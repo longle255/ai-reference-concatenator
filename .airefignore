@@ -1,0 +1,12 @@
+out
+node_modules
+.vscode-test/
+*.vsix
+
+# esbuild-visualizer
+meta.json
+stats.html
+
+.DS_Store
+assets
+pnpm-lock.yaml
