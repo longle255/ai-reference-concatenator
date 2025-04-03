@@ -20,22 +20,34 @@ AI Reference Concatenator is a Visual Studio Code extension designed to transfor
 
 - **Merge Multiple Files:** Select and combine multiple files from the explorer into one output document.
 - **Recursive Folder Concatenation:** Select one or more folders; the extension will recursively merge all contained files.
+- **Project Structure Generation:** Generate a markdown file showing the tree structure of your project, respecting `.airefignore` patterns.
 - **Mixed Selection Support:** Works with a combination of files and folders.
 - **Relative Path Headers:** Each file's content is prefixed with a header showing its path relative to the workspace root.
-- **Custom Output File Name:** Provides an option to specify the name of the output file (default is `concatenated.txt`).
-- **Context Menu Integration:** Easily access the command via the explorer context menu:
+- **Custom Output File Name:** Provides an option to specify the name of the output file (default is `concatenated.txt` for concatenation, `project-structure.md` for structure generation).
+- **Context Menu Integration:** Easily access the commands via the explorer context menu:
   - Visible when selecting multiple files, one or more folders, or mixed selection.
   - Hidden when only a single file is selected.
-- **Automatic Output Opening:** Automatically opens the generated concatenated file after processing.
+- **Automatic Output Opening:** Automatically opens the generated file after processing.
 - **Optimized for AI:** The structured output file is ideal for supplying to AI systems as reference material, ensuring context is maintained for tasks like code analysis or generating accurate documentation.
+- **Ignore Patterns:** Supports `.airefignore` file to exclude specific files and directories from processing.
 
 ## Usage
+
+### File Concatenation
 
 1. **Select Files/Folders:** In the VS Code Explorer, select the files and/or folders you want to concatenate.
 2. **Right-Click:** Right-click on one of the selected items.
 3. **Choose Command:** Select "Concat Selected Files" from the context menu.
 4. **Enter Output Name:** An input box will appear. Enter the desired name for the output file (e.g., `bundle.js`, `combined_log.txt`) and press Enter.
 5. **Review:** The extension creates the output file in your workspace root, complete with relative path headers for each file, and opens it for your review.
+
+### Project Structure Generation
+
+1. **Select Files/Folders:** In the VS Code Explorer, select the files and/or folders you want to include in the structure. If nothing is selected, it will default to the workspace root.
+2. **Right-Click:** Right-click on one of the selected items.
+3. **Choose Command:** Select "Generate Project Structure" from the context menu.
+4. **Enter Output Name:** An input box will appear. Enter the desired name for the structure file (default is `project-structure.md`) and press Enter.
+5. **Review:** The extension creates a markdown file showing the tree structure of your project, respecting `.airefignore` patterns, and opens it for your review.
 
 ![Demo GIF (Placeholder - replace with actual demo)](https://via.placeholder.com/600x300.png?text=AI+Reference+Concatenator+Demo)
 _(Replace the above placeholder with a GIF showing the extension in action)_

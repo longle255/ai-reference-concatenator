@@ -528,11 +528,20 @@ function shouldIgnoreFile(filePath: string, workspacePath: string, ig: ignore.Ig
 function convertTreeToMarkdown(node: DirectoryNode, level: number = 0): string {
     // Handle root node display
     const isRoot = node.relativePath === '/' || node.relativePath === '.';
-    const prefix = level === 0 && isRoot ? '' : '  '.repeat(level);
+
+    // Calculate the prefix for vertical lines
+    let verticalLines = '';
+    if (level > 0) {
+        verticalLines = Array.from({ length: level }).fill('│   ').join('');
+    }
+
+    // Calculate the connector
     const connector = level === 0 && isRoot ? '' : '├── ';
 
-    let markdown = `${prefix}${connector}${node.name}${node.type === 'directory' ? '/' : ''}\n`;
+    // Build the current line
+    let markdown = `${verticalLines}${connector}${node.name}${node.type === 'directory' ? '/' : ''}\n`;
 
+    // Process children
     if (node.children) {
         node.children.forEach((child) => {
             markdown += convertTreeToMarkdown(child, level + 1);
