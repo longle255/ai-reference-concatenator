@@ -49,8 +49,7 @@ AI Reference Concatenator is a Visual Studio Code extension designed to transfor
 4. **Enter Output Name:** An input box will appear. Enter the desired name for the structure file (default is `project-structure.md`) and press Enter.
 5. **Review:** The extension creates a markdown file showing the tree structure of your project, respecting `.airefignore` patterns, and opens it for your review.
 
-![Demo GIF (Placeholder - replace with actual demo)](https://via.placeholder.com/600x300.png?text=AI+Reference+Concatenator+Demo)
-_(Replace the above placeholder with a GIF showing the extension in action)_
+![Demo](https://raw.githubusercontent.com/longle255/ai-reference-concatenator/refs/heads/main/assets/demo.gif)
 
 ## Installation
 

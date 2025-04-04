@@ -10,3 +10,4 @@ stats.html
 .DS_Store
 assets
 pnpm-lock.yaml
+.git
